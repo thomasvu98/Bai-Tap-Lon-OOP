@@ -5,6 +5,9 @@ using namespace std;
 //tao class hoac struct ngay thang nam sinh, nen de la struct cho gon va tien, phan nay Duyen lam
 struct dob
 {
+	int ngay;
+	int thang;
+	int nam;
 };
 
 //tao kieu du lieu liet ke ten la gioi tinh (gender)
@@ -33,12 +36,24 @@ public:
     // ham nhap du lieu
     void nhap()
     {
-        // dien code vao day
+    	cout<<"Moi nhap thong tin:\n";
+        cout<<"STT: ";cin>>sothutu;
+        cout<<"MSCD: ";cin>>MSCD;
+        cout<<"Ten: ";	fflush(stdin);
+        getline(cin,ten);
+        cout<<"Dia chi: ";	fflush(stdin);
+        getline(cin,diachi);
+        
     }
 
     // ham in du lieu
     void in()
     {
+    	cout<<"\n*******************\n";
+    	cout<<"STT: "<<sothutu;
+        cout<<"\nMSCD: "<<MSCD;
+        cout<<"\nTen: "<<ten;
+        cout<<"\nDia chi: "<<diachi;
     }
 };
 
@@ -51,12 +66,55 @@ public:
     void nhap()
     {
         Nhankhau::nhap();
+		cout<<"Nam sinh: ";cin>>ngaysinh.nam;
+		do{
+			cout<<"Thang sinh: ";cin>>ngaysinh.thang;	
+		}while(ngaysinh.thang<1 || ngaysinh.thang>12);	
+	
+		switch(ngaysinh.thang){
+			case 2:
+			{
+				if((ngaysinh.nam%400==0) ||(ngaysinh.nam%4==0 && ngaysinh.nam%100!=0)){
+					do{
+						cout<<"Ngay ngay: ";cin>>ngaysinh.ngay;
+					}
+					while(ngaysinh.ngay<1 ||ngaysinh.ngay>29);}
+				else
+					do{
+						cout<<"Ngay sinh: ";cin>>ngaysinh.ngay;
+					}
+					while(ngaysinh.ngay<1 || ngaysinh.ngay>28);
+				}
+				break;
+			case 4:
+			case 6:
+			case 9:
+			case 11:
+			{
+				do{
+					cout<<"Ngay sinh: ";
+					cin>>ngaysinh.ngay;
+				}
+				while(ngaysinh.ngay<1 ||ngaysinh.ngay>30);
+				break;
+			}
+			default:
+			{
+				do{
+					cout<<"Ngay sinh: ";
+					cin>>ngaysinh.ngay;
+				}
+				while(ngaysinh.ngay<1 || ngaysinh.ngay>31);
+				break;
+			}	
+		}
         // dien tiep code vao day
     }
 
     void in()
     {
         Nhankhau::in();
+        cout<<"\nNgay sinh: "<<ngaysinh.ngay<<"/"<<ngaysinh.thang<<"/"<<ngaysinh.nam;
         // viet tiep code vao day
     }
 };
@@ -71,13 +129,55 @@ public:
     void nhap()
     {
         Nhankhau::nhap();
+        cout<<"Nam sinh: ";cin>>ngaysinh.nam;
+		do{
+			cout<<"Thang sinh: ";cin>>ngaysinh.thang;	
+		}while(ngaysinh.thang<1 || ngaysinh.thang>12);	
+	
+		switch(ngaysinh.thang){
+			case 2:
+			{
+				if((ngaysinh.nam%400==0) ||(ngaysinh.nam%4==0 && ngaysinh.nam%100!=0)){
+					do{
+						cout<<"Ngay ngay: ";cin>>ngaysinh.ngay;
+					}
+					while(ngaysinh.ngay<1 ||ngaysinh.ngay>29);}
+				else
+					do{
+						cout<<"Ngay sinh: ";cin>>ngaysinh.ngay;
+					}
+					while(ngaysinh.ngay<1 || ngaysinh.ngay>28);
+				}
+				break;
+			case 4:
+			case 6:
+			case 9:
+			case 11:
+			{
+				do{
+					cout<<"Ngay sinh: ";
+					cin>>ngaysinh.ngay;
+				}
+				while(ngaysinh.ngay<1 ||ngaysinh.ngay>30);
+				break;
+			}
+			default:
+			{
+				do{
+					cout<<"Ngay sinh: ";
+					cin>>ngaysinh.ngay;
+				}
+				while(ngaysinh.ngay<1 || ngaysinh.ngay>31);
+				break;
+			}	
+		}
         // dien tiep code vao day
     }
 
     void in()
     {
         Nhankhau::in();
-        // viet tiep code vao day
+        cout<<"\nNgay sinh: "<<ngaysinh.ngay<<"/"<<ngaysinh.thang<<"/"<<ngaysinh.nam;
     }
 
     // ham thong ke du lieu
