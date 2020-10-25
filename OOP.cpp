@@ -14,7 +14,8 @@ struct dob
 enum gender
 {
     Male,
-    Female
+    Female,
+	Oppsie
 }; // Nam va Nu
 
 //tao kieu du lieu liet ke ten la tinh trang (condition)
